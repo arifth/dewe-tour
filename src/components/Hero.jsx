@@ -36,7 +36,14 @@ export default function Hero() {
             >
               Explore
             </h1>
-            <p class="col-md-8 text-white" style={{ fontSize: "3.5rem" }}>
+            <p
+              class="col-md-8 text-white"
+              style={{
+                fontSize: "3.5rem",
+                fontWeight: "lighter",
+                letterSpacing: "5px"
+              }}
+            >
               YOUR AMAZING CITY TOGETHER
             </p>
             <label className="text-white mb-3" style={{ fontSize: "1.5rem" }}>

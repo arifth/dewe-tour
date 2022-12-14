@@ -90,9 +90,9 @@ function TestisCard(props) {
           </Card.Title>
           <Card.Text>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-              provident ipsam esse deleniti iusto, rem quibusdam velit unde
-              sequi exercitationem!
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi
+              quam dolorem nulla soluta? Sint sunt delectus consectetur quia
+              ducimus reiciendis?
             </p>
           </Card.Text>
         </Card.Body>

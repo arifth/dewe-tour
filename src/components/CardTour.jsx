@@ -10,7 +10,15 @@ export default function CardTour() {
       >
         <Card.Img variant="top" src="/ImgCard1a.png" />
         <Card.Body>
-          <Card.Title>6D/4N Fun Tassie Vacation ...</Card.Title>
+          <Card.Title>
+            <a
+              href="/detail-tour"
+              className="text-black"
+              style={{ textDecoration: "none" }}
+            >
+              4D/3N Labuan Bajo Delight
+            </a>
+          </Card.Title>
           <div
             className="d-flex justify-content-between"
             style={{

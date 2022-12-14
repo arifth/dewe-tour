@@ -1,16 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './scss/App.scss'
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from "react"
+import ReactDOM from "react-dom/client"
+import "./scss/App.scss"
+import App from "./App"
 
+const root = ReactDOM.createRoot(document.getElementById("root"))
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+//  BrowserRouter used for to initiate api used to react router
+//  Routes is api used to routes whatever route inside of it
+//  Route is api defined path being used for routing to another page inside our app
+//  Required props are :
+//   path and element
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
-);
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
