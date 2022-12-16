@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import { Base } from "../../components/Base"
 import NavBar from "../../components/NavBar"
 import Footer from "../../components/Footer"
-import InfoDetail from "../../components/InfoDetail"
-import { Container, Row, Image, Col, Button } from "react-bootstrap"
+import { Container, Row, Button } from "react-bootstrap"
+import HistoryOrder from "../../components/HistoryOrder"
 
 export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
   return (
@@ -15,24 +15,11 @@ export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
       />
       <Container
         fluid
-        style={{ width: "80vw", marginTop: "3rem" }}
+        style={{ width: "80vw", marginTop: "10px" }}
         className="mb-5 "
       >
         <Row>
-          <h1
-            className="col-12"
-            diu
-            style={{
-              textAlign: "start",
-              display: "block",
-              marginTop: "10rem",
-              fontWeight: 800,
-              fontSize: "4rem"
-            }}
-          >
-            This is Payment
-          </h1>
-
+          <HistoryOrder />
           <Row className="d-flex justify-content-end">
             <Button
               className="text-white align-self-end col-4 "

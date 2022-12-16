@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/Users/Home"
 import DetailTour from "./pages/Users/DetaiTour"
@@ -7,6 +7,21 @@ import Payment from "./pages/Users/Payment"
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  const [tours, setTours] = useState([
+    {
+      name: "tour de la pante8",
+      desc: "ased asdf"
+    },
+    {
+      name: "2nd name ",
+      desc: "apaaan tuh"
+    }
+  ])
+
+  useEffect(() => {
+    localStorage.setItem("listOfTours", JSON.stringify(tours))
+  })
 
   return (
     <>

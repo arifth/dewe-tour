@@ -4,6 +4,7 @@ import NavBar from "../../components/NavBar"
 import Footer from "../../components/Footer"
 import { Container, Row, Image, Col, Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import HistoryOrder from "../../components/HistoryOrder"
 
 export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
   return (
@@ -57,7 +58,7 @@ export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
                   </div>
                 </div>
 
-                <div className="d-flex mb-3">
+                <div className="d-flex mb-3 ">
                   <div>
                     <Image
                       fluid
@@ -120,8 +121,12 @@ export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
                   </div>
                 </div>
               </div>
-              <div className="col-3 mt-2">
-                <img src="/photoBg.png" className=" rounded-start" alt="..." />
+              <div className="col-3 mt-2 overflow-hidden">
+                <img
+                  src="/photoBg.png"
+                  className=" rounded-start mt-3"
+                  alt="..."
+                />
                 <Row className="d-flex mx-auto">
                   <Button
                     className="text-white mt-2 "
@@ -147,18 +152,7 @@ export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
 
         <h2 className="mb-5">History Trip </h2>
 
-        <Row>
-          <Col
-            maxWidth={"1200px"}
-            style={{
-              height: "500px",
-              marginBottom: "200px",
-              border: "2px solid #B7B7B7",
-              borderRadius: "10px",
-              background: "#FFFFFF"
-            }}
-          ></Col>
-        </Row>
+        <HistoryOrder />
       </Container>
       <Footer />
     </Base>
