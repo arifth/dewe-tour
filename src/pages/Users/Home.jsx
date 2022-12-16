@@ -5,11 +5,10 @@ import TestisCard from "../../components/TestisCard"
 import Footer from "../../components/Footer"
 import ListTour from "../../components/ListTour"
 
-export default function Home(isLoggedIn) {
-  console.log(isLoggedIn)
+export default function Home({ isLoggedIn, setIsLoggedIn }) {
   return (
     <Base>
-      <Hero />
+      <Hero isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <TestisCard />
       <ListTour />
       <Footer />

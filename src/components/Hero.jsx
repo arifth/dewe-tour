@@ -2,10 +2,14 @@ import React from "react"
 import { InputGroup, Form } from "react-bootstrap"
 import NavBar from "./NavBar"
 
-export default function Hero() {
+export default function Hero({ isLoggedIn, setIsLoggedIn }) {
   return (
     <>
-      <NavBar />
+      <NavBar
+        bgNav={"tranparent"}
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
+      />
       <div
         style={{
           zIndex: 2,
@@ -41,7 +45,7 @@ export default function Hero() {
               style={{
                 fontSize: "3.5rem",
                 fontWeight: "lighter",
-                letterSpacing: "5px"
+                letterSpacing: "2px"
               }}
             >
               YOUR AMAZING CITY TOGETHER

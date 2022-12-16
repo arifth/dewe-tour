@@ -9,10 +9,11 @@ export const Base = ({ children }) => {
         boxSizing: "border-box",
         background: "#F5F5F5",
         width: "100vw",
-        height: "300vh",
+        height: "auto",
         zIndex: 1,
         position: "absolute",
-        overflow: "hidden"
+        overflow: "hidden",
+        fontFamily: "Open sans"
       }}
     >
       {children}

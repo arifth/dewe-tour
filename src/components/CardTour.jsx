@@ -1,5 +1,6 @@
 import React from "react"
 import { Card } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
 export default function CardTour() {
   return (
@@ -11,13 +12,13 @@ export default function CardTour() {
         <Card.Img variant="top" src="/ImgCard1a.png" />
         <Card.Body>
           <Card.Title>
-            <a
-              href="/detail-tour"
+            <Link
+              to="/detail-tour"
               className="text-black"
               style={{ textDecoration: "none" }}
             >
               4D/3N Labuan Bajo Delight
-            </a>
+            </Link>
           </Card.Title>
           <div
             className="d-flex justify-content-between"
