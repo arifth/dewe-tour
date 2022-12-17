@@ -8,8 +8,15 @@ export default function ProfileThumb({ isLoggedIn, setIsLoggedIn }) {
   }
   return (
     <Dropdown>
-      <Dropdown.Toggle style={{ borderRadius: "30%" }}>
-        <Image src="/thumb.png" roundedCircle />
+      <Dropdown.Toggle
+        style={{
+          borderRadius: "20px",
+          backgroundColor: "transparent",
+          border: "none"
+        }}
+        rounded
+      >
+        <Image src="/thumb.png" rounded />
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="p-4 mt-3">

@@ -2,7 +2,10 @@ import Card from "react-bootstrap/Card"
 
 function TestisCard(props) {
   return (
-    <div className="container-fluid d-flex flex-wrap gap-4 justify-content-center text-center">
+    <div
+      className="container-fluid d-flex flex-wrap flex-row gap-4 justify-content-center text-center"
+      style={{ marginBottom: "3rem" }}
+    >
       <Card
         style={{ width: "15vw", marginTop: "-3rem" }}
         className="d-flex align-items-center px-3 py-3"
@@ -15,13 +18,12 @@ function TestisCard(props) {
         <Card.Body>
           -
           <Card.Title>
-            <h3>Hello mamang</h3>
+            <h3>Best Price Guarantee</h3>
           </Card.Title>
-          <Card.Text>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-              provident ipsam esse deleniti iusto, rem quibusdam velit unde
-              sequi exercitationem!
+          <Card.Text style={{ height: "200px" }}>
+            <p style={{ textOverflow: "ellipsis" }}>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid,
+              sed.
             </p>
           </Card.Text>
         </Card.Body>
@@ -39,13 +41,12 @@ function TestisCard(props) {
         <Card.Body>
           -
           <Card.Title>
-            <h3>Hello mamang</h3>
+            <h3>Travellers Love Us</h3>
           </Card.Title>
           <Card.Text>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-              provident ipsam esse deleniti iusto, rem quibusdam velit unde
-              sequi exercitationem!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Accusantium, cumque?
             </p>
           </Card.Text>
         </Card.Body>
@@ -62,14 +63,10 @@ function TestisCard(props) {
         <Card.Body>
           -
           <Card.Title>
-            <h3>Hello mamang</h3>
+            <h3>Best Travel Agent</h3>
           </Card.Title>
           <Card.Text>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-              provident ipsam esse deleniti iusto, rem quibusdam velit unde
-              sequi exercitationem!
-            </p>
+            <p>A small river named Duren flows by their place and supplies</p>
           </Card.Text>
         </Card.Body>
       </Card>
@@ -86,14 +83,10 @@ function TestisCard(props) {
         <Card.Body>
           -
           <Card.Title>
-            <h3>Hello mamang</h3>
+            <h3>Our Dedicated Support</h3>
           </Card.Title>
           <Card.Text>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi
-              quam dolorem nulla soluta? Sint sunt delectus consectetur quia
-              ducimus reiciendis?
-            </p>
+            <p>A small river named Duren flows by their place and supplies</p>
           </Card.Text>
         </Card.Body>
       </Card>

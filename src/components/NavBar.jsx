@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Container from "react-bootstrap/Container"
 import Navbar from "react-bootstrap/Navbar"
 import { Button } from "react-bootstrap"
@@ -9,6 +9,15 @@ import ProfileThumb from "./ProfileThumb"
 
 function NavBar({ bgNav, isLoggedIn, setIsLoggedIn }) {
   const [showreg, setShowreg] = useState(false)
+
+  useEffect(() => {
+    const tours = JSON.parse(localStorage.getItem("listTours"))
+  })
+
+  useEffect(() => {
+    const users = JSON.parse(localStorage.getItem("listUsers"))
+    console.log(users[0].isLoggedIn)
+  })
 
   const handleCloseReg = () => {
     setShowreg(false)
@@ -31,7 +40,11 @@ function NavBar({ bgNav, isLoggedIn, setIsLoggedIn }) {
 
   return (
     <>
-      <ModalRegister show={showreg} handleClose={handleCloseReg} />
+      <ModalRegister
+        show={showreg}
+        handleOpenLog={handleOpenLog}
+        handleClose={handleCloseReg}
+      />
       <ModalLogin
         show={showLog}
         handleClose={handleCloseLog}
@@ -87,7 +100,7 @@ function NavBar({ bgNav, isLoggedIn, setIsLoggedIn }) {
                   style={{ width: "6rem" }}
                 >
                   Login
-                </Button>{" "}
+                </Button>
               </>
             )}
           </div>

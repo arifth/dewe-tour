@@ -1,9 +1,19 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Modal, Button, Form } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
 export default function ModalRegister({ show, handleClose }) {
+  useEffect(() => {
+    const tours = JSON.parse(localStorage.getItem("listTours"))
+  })
+
+  useEffect(() => {
+    const users = JSON.parse(localStorage.getItem("listUsers"))
+    // console.log(users[0].isLoggedIn)
+  })
+
   return (
-    <Modal show={show} onHide={handleClose}>
+    <Modal show={show} onHide={handleClose} centered>
       <img
         src="/leftFlower.png"
         alt=""
@@ -100,14 +110,15 @@ export default function ModalRegister({ show, handleClose }) {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button
-          variant="primary"
-          onClick={handleClose}
-          style={{ width: "100%" }}
-          className="text-white"
-        >
-          Register
-        </Button>
+        <Link to={"/trips-history"}>
+          <Button
+            variant="primary"
+            style={{ width: "100%" }}
+            className="text-white"
+          >
+            Register
+          </Button>
+        </Link>
       </Modal.Footer>
     </Modal>
   )

@@ -1,23 +1,59 @@
+import { getByDisplayValue } from "@testing-library/react"
 import React from "react"
 import { Card } from "react-bootstrap"
 import { Link } from "react-router-dom"
-
-export default function CardTour() {
+export default function CardTour({
+  id,
+  img,
+  quota,
+  title_trip,
+  price,
+  country
+}) {
   return (
     <>
       <Card
-        style={{ width: "350px", padding: "1rem 1rem 0 1rem" }}
+        style={{ width: "350px" }}
         className="d-flex flex-column justify-content-center align-item-center "
       >
-        <Card.Img variant="top" src="/ImgCard1a.png" />
+        {/* <Card.Img variant="top" src="/img_tours/{img}.png" /> */}
+        <Card.Img
+          variant="top"
+          src={`/img_tours/${country}/${img}.jpg`}
+          style={{
+            height: "240px",
+            width: "328px",
+            overflow: "hidden",
+            objectFit: "cover",
+            margin: "1rem"
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            top: 30,
+            right: 0,
+            background: "#ffffff",
+            fontWeight: 500,
+            borderRadius: "5px",
+            height: "30px",
+            width: "5rem",
+            display: "flex",
+            justifyContent: "center",
+            alignItem: "center"
+          }}
+        >
+          <h5>{quota}</h5>
+        </div>
+
         <Card.Body>
           <Card.Title>
             <Link
-              to="/detail-tour"
+              to={`/detail-tour/${id}`}
               className="text-black"
               style={{ textDecoration: "none" }}
             >
-              4D/3N Labuan Bajo Delight
+              {title_trip}
             </Link>
           </Card.Title>
           <div
@@ -29,8 +65,12 @@ export default function CardTour() {
               padding: 0
             }}
           >
-            <Card.Text className="text-primary">IDR. 12,398,000</Card.Text>
-            <Card.Text className="text-muted">Australia</Card.Text>
+            <Card.Text className="text-primary" style={{ bottom: 2 }}>
+              IDR. {price.toLocaleString()}
+            </Card.Text>
+            <Card.Text className="text-muted" style={{ bottom: 2 }}>
+              {country}
+            </Card.Text>
           </div>
         </Card.Body>
       </Card>

@@ -6,7 +6,6 @@ export default function HistoryOrder() {
   return (
     <Row>
       <Col
-        maxWidth={"1200px"}
         style={{
           height: "auto",
           marginBottom: "200px",
