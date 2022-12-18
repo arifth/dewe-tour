@@ -24,6 +24,7 @@ export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
   }
 
   let { id } = useParams()
+  console.log(typeof id)
 
   const [tours, setTours] = useState([])
 

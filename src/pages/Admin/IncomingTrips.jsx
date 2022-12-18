@@ -13,7 +13,7 @@ import {
   Card,
   Image
 } from "react-bootstrap"
-import HistoryOrder from "../../components/HistoryOrder"
+import HistoryOrderConfirmation from "../../components/HistoryOrderConfirmation"
 import "./IncomingTrips.css"
 
 export default function IncomingTrips({ isLoggedIn, setIsLoggedIn }) {
@@ -48,8 +48,72 @@ export default function IncomingTrips({ isLoggedIn, setIsLoggedIn }) {
               </thead>
               <tbody>
                 <tr>
-                  <td>Mark</td>
+                  <td>1</td>
                   <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>test</td>
+                  <td style={{ color: "green" }}>succses</td>
+                  <td>
+                    <Button
+                      onClick={handleShow}
+                      style={{ background: "none", border: "none" }}
+                    >
+                      <img src="/search.png" alt="" />
+                    </Button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+                  <td>usman maun</td>
+                  <td>@mdo</td>
+                  <td>test</td>
+                  <td style={{ color: "green" }}>succses</td>
+                  <td>
+                    <Button
+                      onClick={handleShow}
+                      style={{ background: "none", border: "none" }}
+                    >
+                      <img src="/search.png" alt="" />
+                    </Button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>3</td>
+                  <td>jafar </td>
+                  <td>@mdo</td>
+                  <td>test</td>
+                  <td style={{ color: "green" }}>succses</td>
+                  <td>
+                    <Button
+                      onClick={handleShow}
+                      style={{ background: "none", border: "none" }}
+                    >
+                      <img src="/search.png" alt="" />
+                    </Button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>sbut sj si anu</td>
+                  <td>@mdo</td>
+                  <td>test</td>
+                  <td style={{ color: "green" }}>succses</td>
+                  <td>
+                    <Button
+                      onClick={handleShow}
+                      style={{ background: "none", border: "none" }}
+                    >
+                      <img src="/search.png" alt="" />
+                    </Button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>5 </td>
+                  <td>bbae rmasdf</td>
                   <td>@mdo</td>
                   <td>test</td>
                   <td style={{ color: "green" }}>succses</td>
@@ -75,7 +139,7 @@ export default function IncomingTrips({ isLoggedIn, setIsLoggedIn }) {
           dialogClassName="approvement-modals"
         >
           <Modal.Body>
-            <HistoryOrder />
+            <HistoryOrderConfirmation />
           </Modal.Body>
         </Modal>
         <Footer />

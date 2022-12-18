@@ -14,7 +14,7 @@ export default function Hero({ isLoggedIn, setIsLoggedIn }) {
         style={{
           zIndex: 2,
           width: "100vw",
-          height: "70vh",
+          height: "100vh",
           top: 0,
           background: `url(/heroBg.png)`,
           backgroundSize: "cover",
@@ -26,7 +26,7 @@ export default function Hero({ isLoggedIn, setIsLoggedIn }) {
           style={{
             position: "absolute",
             background: "rgba(2, 1, 2, 0.6)",
-            height: "70vh",
+            height: "100vh",
             width: "100%"
           }}
         >

@@ -7,8 +7,12 @@ export default function ModalLogin({
   handleOpen,
   handleClose,
   // setIsLoggedIn
-  redirect
+  redirect,
+  setTrigger
 }) {
+  const handleTrigger = () => {
+    setTrigger(0)
+  }
   const navigate = useNavigate()
   // declare variable for users container
 
@@ -36,7 +40,7 @@ export default function ModalLogin({
 
     listUsers.map((k) => {
       if (
-        // BUG : fixlogic login for admin
+        // TODO[X] : fixlogic login for admin
         // if username & password match admin u & p ,
         form.email === k.email &&
         listUsers[0].password === parseInt(form.password)
@@ -45,10 +49,11 @@ export default function ModalLogin({
         console.log("log as admin")
         localStorage.setItem("isAdmin", true)
         localStorage.setItem("isLoggedIn", true)
-        console.log(k.id)
+        // console.log(k.id)
         setId(k.id)
         navigate("/IncomingTrips")
-        console.log(id)
+        // workaround to trigger rerender
+        // console.log(id)
       } else if (
         k.email === form.email &&
         parseInt(form.password) === k.password
@@ -56,15 +61,20 @@ export default function ModalLogin({
         localStorage.setItem("isAdmin", false)
         localStorage.setItem("isLoggedIn", true)
         localStorage.setItem("idUser", JSON.stringify(k.id))
-        console.log(k.id)
+        // console.log(k.id)
         setId(k.id)
-        navigate(`/detail-user/${k.id}`)
+        // workaround to trigger rerender
+        handleTrigger()
+        handleClose()
+        // navigate(`/detail-user/${k.id}`)
+        navigate("/")
       }
     })
   }
 
   return (
     <Modal show={show} onShow={handleOpen} onHide={handleClose} centered>
+      <div style={{ display: "none" }}>{setTrigger}</div>
       <img
         src="/leftFlower.png"
         alt=""

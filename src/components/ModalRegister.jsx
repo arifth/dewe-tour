@@ -12,6 +12,9 @@ export default function ModalRegister({ show, handleClose }) {
     // console.log(users[0].isLoggedIn)
   })
 
+  // TODO[]: logic for register handling ,get all input from user then put it in ListUsers localstorage
+  const handleRegister = () => {}
+
   return (
     <Modal show={show} onHide={handleClose} centered>
       <img
@@ -115,6 +118,7 @@ export default function ModalRegister({ show, handleClose }) {
             variant="primary"
             style={{ width: "100%" }}
             className="text-white"
+            onClick={handleRegister}
           >
             Register
           </Button>

@@ -3,15 +3,14 @@ import { Row, Col, Table } from "react-bootstrap"
 import TransStatus from "./TransStatus"
 import { Link } from "react-router-dom"
 
-export default function HistoryOrder() {
+export default function HistoryOrderConfirmation() {
   return (
     <Row>
       <Col
         style={{
-          marginTop: "20rem",
           height: "auto",
           marginBottom: "200px",
-          marginTop: "10rem",
+          marginTop: "1rem",
           border: "2px solid #B7B7B7",
           borderRadius: "10px",
           background: "#FFFFFF",

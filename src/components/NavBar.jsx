@@ -59,6 +59,7 @@ function NavBar({ bgNav }) {
         show={showLog}
         handleClose={handleCloseLog}
         redirect={handleOpenReg}
+        setTrigger={setTrigger}
       />
       <Navbar
         style={{

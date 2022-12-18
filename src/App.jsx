@@ -12,6 +12,17 @@ import PrivateLoginAdmin from "./components/PrivateLoginAdmin"
 import { isLogIn } from "./data/IsLoggedIn"
 import { isAdmin } from "./data/isAdmin"
 import { idUser } from "./data/idUser"
+import AddTrip from "./pages/Admin/AddTrip"
+import IncomeTrip from "./pages/Admin/IncomeTrip"
+
+//  TODO[]: create Mockup for Add Trip and List Trip ( admin )
+//  TODO[]: create dummy data for payment history in localstorage
+//  TODO[]: handle for dynamically render image and other`s image
+//  TODO[]: create modal for click button on page
+//  TODO[]: create another order history with rendered approval from admin
+//  TODO[]: create different dropdown for admin login
+//  TODO[]: add more data for payment list in admin page
+//  TODO[]: create different History order with aprove and cancel button
 
 export default function App() {
   useEffect(() => {
@@ -38,6 +49,8 @@ export default function App() {
     <>
       <BrowserRouter>
         <Routes>
+          <Route path="/incomeTrip" element={<IncomeTrip />} />
+          <Route path="/addTrip" element={<AddTrip />} />
           <Route path="/" element={<Home />} />
           <Route path="/detail-tour/:id" element={<DetailTour />} />
 
