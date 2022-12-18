@@ -10,7 +10,7 @@ export default function HistoryOrder() {
         style={{
           height: "auto",
           marginBottom: "200px",
-          marginTop: "10rem",
+          marginTop: "1rem",
           border: "2px solid #B7B7B7",
           borderRadius: "10px",
           background: "#FFFFFF",

@@ -14,14 +14,16 @@ export default function ModalLogin({
 
   const [listUsers, setListUsers] = useState([])
 
-  // useEffect(() => {
-  //   const tours = JSON.parse(localStorage.getItem("listTours"))
-  // }, [])
+  const [id, setId] = useState()
 
   useEffect(() => {
     setListUsers(JSON.parse(localStorage.getItem("listUsers")))
-    console.log(listUsers)
   }, [])
+
+  useEffect(() => {
+    setId(JSON.parse(localStorage.getItem("idUser")))
+    // console.log(id)
+  })
 
   const [form, setForm] = useState({})
 
@@ -32,31 +34,32 @@ export default function ModalLogin({
   const handleSubmit = (e) => {
     // compare value in form to local storage
 
-    // let admin = false
-    // let users = false
-    // console.log(admin)
     listUsers.map((k) => {
       if (
+        // BUG : fixlogic login for admin
+        // if username & password match admin u & p ,
         form.email === k.email &&
         listUsers[0].password === parseInt(form.password)
       ) {
+        //  then set localstorage as is ,and navigate to /incomingtrips route
         console.log("log as admin")
         localStorage.setItem("isAdmin", true)
         localStorage.setItem("isLoggedIn", true)
-        // admin = true
+        console.log(k.id)
+        setId(k.id)
         navigate("/IncomingTrips")
-        // console.log(admin)
-      } else {
-        if (k.email === form.email && parseInt(form.password) === k.password) {
-          console.log(k.id)
-          localStorage.setItem("isAdmin", false)
-          localStorage.setItem("isLoggedIn", true)
-          // users = true
-          navigate("/payment")
-        }
+        console.log(id)
+      } else if (
+        k.email === form.email &&
+        parseInt(form.password) === k.password
+      ) {
+        localStorage.setItem("isAdmin", false)
+        localStorage.setItem("isLoggedIn", true)
+        localStorage.setItem("idUser", JSON.stringify(k.id))
+        console.log(k.id)
+        setId(k.id)
+        navigate(`/detail-user/${k.id}`)
       }
-      // console.log(admin)
-      // eslint-disable-next-line array-callback-return
     })
   }
 

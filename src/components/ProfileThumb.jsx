@@ -12,10 +12,10 @@ export default function ProfileThumb({ setTrigger }) {
   })
 
   const handleLOgOut = () => {
-    // setIsLoggedIn(false)
     JSON.stringify(localStorage.setItem("isLoggedIn", false))
     setTrigger(true)
     navigate("/")
+    localStorage.setItem("idUser", 0)
   }
   return (
     <Dropdown>
@@ -27,7 +27,16 @@ export default function ProfileThumb({ setTrigger }) {
         }}
         rounded
       >
-        <Image src="/thumb.png" rounded />
+        <Image
+          src="/monkey.jpg"
+          style={{
+            height: "50px",
+            width: "50px",
+            objectFit: "cover",
+            borderRadius: "50%",
+            border: "2px solid yellow"
+          }}
+        />
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="p-4 mt-3">
@@ -37,6 +46,7 @@ export default function ProfileThumb({ setTrigger }) {
           style={{ position: "absolute", top: 0, left: 1, marginTop: "-16px" }}
         />
         <Dropdown.Item>
+          {/* BUG: link doesn`t work properly */}
           <Link
             to={"/detail-user"}
             style={{ textDecoration: "none", color: "black" }}
@@ -54,6 +64,7 @@ export default function ProfileThumb({ setTrigger }) {
             to={"/payment"}
             style={{ textDecoration: "none", color: "black" }}
           >
+            {/* BUG: link doesn`t work properly */}
             <h3 style={{ fontWeight: 600 }}>
               <span>
                 <img src="/DropIcon2.png" alt="" className="me-2" />

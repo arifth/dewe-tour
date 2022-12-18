@@ -11,10 +11,15 @@ import PrivateLogin from "./components/PrivateLogin"
 import PrivateLoginAdmin from "./components/PrivateLoginAdmin"
 import { isLogIn } from "./data/IsLoggedIn"
 import { isAdmin } from "./data/isAdmin"
+import { idUser } from "./data/idUser"
 
 export default function App() {
   useEffect(() => {
     localStorage.setItem("isLoggedIn", JSON.stringify(isLogIn))
+  })
+
+  useEffect(() => {
+    localStorage.setItem("idUser", JSON.stringify(idUser))
   })
 
   useEffect(() => {

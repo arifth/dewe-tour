@@ -58,7 +58,6 @@ function NavBar({ bgNav }) {
       <ModalLogin
         show={showLog}
         handleClose={handleCloseLog}
-        // isLoggedIn={loggedIn}
         redirect={handleOpenReg}
       />
       <Navbar
