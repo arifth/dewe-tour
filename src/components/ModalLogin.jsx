@@ -1,28 +1,29 @@
 import React, { useEffect, useState } from "react"
-import { Modal, Button, Form } from "react-bootstrap"
+import { Modal, Button, Form, Row } from "react-bootstrap"
+import { useNavigate } from "react-router-dom"
 
 export default function ModalLogin({
   show,
   handleOpen,
   handleClose,
-  isLoggedIn,
-  setIsLoggedIn
+  // setIsLoggedIn
+  redirect
 }) {
+  const navigate = useNavigate()
   // declare variable for users container
-  let listUsers = {}
+
+  const [listUsers, setListUsers] = useState([])
+
+  // useEffect(() => {
+  //   const tours = JSON.parse(localStorage.getItem("listTours"))
+  // }, [])
 
   useEffect(() => {
-    const tours = JSON.parse(localStorage.getItem("listTours"))
-  })
+    setListUsers(JSON.parse(localStorage.getItem("listUsers")))
+    console.log(listUsers)
+  }, [])
 
-  useEffect(() => {
-    listUsers = JSON.parse(localStorage.getItem("listUsers"))
-  })
-
-  const [form, setForm] = useState({
-    email: "",
-    password: ""
-  })
+  const [form, setForm] = useState({})
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -31,12 +32,10 @@ export default function ModalLogin({
   const handleSubmit = (e) => {
     // compare value in form to local storage
 
-    // console.log(typeof form.password)
+    // let admin = false
+    // let users = false
+    // console.log(admin)
     listUsers.map((k) => {
-      console.log(listUsers[0].password)
-      // console.log(k.email === form.email)
-      // console.log(parseInt(form.password) === k.password)
-      // console.log(k.password)
       if (
         form.email === k.email &&
         listUsers[0].password === parseInt(form.password)
@@ -44,23 +43,21 @@ export default function ModalLogin({
         console.log("log as admin")
         localStorage.setItem("isAdmin", true)
         localStorage.setItem("isLoggedIn", true)
+        // admin = true
+        navigate("/IncomingTrips")
+        // console.log(admin)
       } else {
         if (k.email === form.email && parseInt(form.password) === k.password) {
-          console.log("log as user")
+          console.log(k.id)
           localStorage.setItem("isAdmin", false)
           localStorage.setItem("isLoggedIn", true)
+          // users = true
+          navigate("/payment")
         }
       }
+      // console.log(admin)
       // eslint-disable-next-line array-callback-return
-      return
     })
-    // } else {
-    //   listUsers.filter((k) => {
-    //     if (k.email === form.email && k.password === form.password) {
-    //       localStorage.setItem("isLoggedIn", true)
-    //     }
-    //   })
-    // }
   }
 
   return (
@@ -125,6 +122,7 @@ export default function ModalLogin({
           </Form.Group>
         </Form>
       </Modal.Body>
+
       <Modal.Footer>
         <Button
           variant="primary"
@@ -134,6 +132,18 @@ export default function ModalLogin({
         >
           Login
         </Button>
+
+        <Row style={{ width: "100%" }}>
+          <h3
+            style={{ fontWeight: 300, textAlign: "center" }}
+            className={"text-muted"}
+          >
+            Don't have an account?{" "}
+            <span style={{ fontWeight: 800, cursor: "pointer" }}>
+              <a onClick={redirect}>Klik Here</a>
+            </span>
+          </h3>
+        </Row>
       </Modal.Footer>
     </Modal>
   )

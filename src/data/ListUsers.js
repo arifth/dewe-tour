@@ -15,6 +15,7 @@ export const users = [
     password: 1234,
     phone: 723740234023040,
     address: "jl bebas kemana jha ",
-    role: "user"
+    role: "user",
+    trips: [1, 3]
   }
 ]

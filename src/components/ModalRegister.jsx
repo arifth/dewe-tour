@@ -47,7 +47,7 @@ export default function ModalRegister({ show, handleClose }) {
               Full Name
             </Form.Label>
             <Form.Control
-              type="email"
+              type="text"
               style={{
                 background: "#D2D2D2",
                 marginBottom: "1rem",
@@ -70,7 +70,7 @@ export default function ModalRegister({ show, handleClose }) {
               Password
             </Form.Label>
             <Form.Control
-              type="email"
+              type="password"
               style={{
                 background: "#D2D2D2",
                 marginBottom: "1rem",

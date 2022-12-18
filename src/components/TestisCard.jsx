@@ -1,12 +1,13 @@
-import Card from "react-bootstrap/Card"
+import { Card, Col, Row } from "react-bootstrap"
 
 function TestisCard(props) {
   return (
-    <div
+    <Row
       className="container-fluid d-flex flex-wrap flex-row gap-4 justify-content-center text-center"
       style={{ marginBottom: "3rem" }}
     >
       <Card
+        s={12}
         style={{ width: "15vw", marginTop: "-3rem" }}
         className="d-flex align-items-center px-3 py-3"
       >
@@ -90,7 +91,7 @@ function TestisCard(props) {
           </Card.Text>
         </Card.Body>
       </Card>
-    </div>
+    </Row>
   )
 }
 

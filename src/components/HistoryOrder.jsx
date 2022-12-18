@@ -1,5 +1,6 @@
 import React from "react"
-import { Row, Col, Alert, Table } from "react-bootstrap"
+import { Row, Col, Table } from "react-bootstrap"
+import TransStatus from "./TransStatus"
 import { Link } from "react-router-dom"
 
 export default function HistoryOrder() {
@@ -41,18 +42,8 @@ export default function HistoryOrder() {
           <Col md={5} className="d-flex flex-column">
             <h2 style={{ fontWeight: 600 }}>6D/4N Fun Tassie Vacation</h2>
             <p className="text-muted">Australia</p>
-            <Alert
-              className="col-2 ps-2 "
-              style={{
-                background: "rgba(60,247,30,0.1)",
-                color: "rgba(60,247,30,1)",
-                padding: "1rem"
-              }}
-              key={"danger"}
-              variant={"danger"}
-            >
-              Succes
-            </Alert>
+
+            <TransStatus />
           </Col>
           <Col md={4} className="d-flex flex-wrap">
             <Col className="col-6">

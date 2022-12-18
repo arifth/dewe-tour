@@ -7,8 +7,15 @@ import ModalLogin from "./ModalLogin"
 import { Link } from "react-router-dom"
 import ProfileThumb from "./ProfileThumb"
 
-function NavBar({ bgNav, isLoggedIn, setIsLoggedIn }) {
+function NavBar({ bgNav }) {
   const [showreg, setShowreg] = useState(false)
+
+  const [loggedIn, setIsLoggedIn] = useState(false)
+  const [trigger, setTrigger] = useState(false)
+
+  useEffect(() => {
+    setIsLoggedIn(JSON.parse(localStorage.getItem("isLoggedIn")))
+  })
 
   useEffect(() => {
     const tours = JSON.parse(localStorage.getItem("listTours"))
@@ -16,7 +23,7 @@ function NavBar({ bgNav, isLoggedIn, setIsLoggedIn }) {
 
   useEffect(() => {
     const users = JSON.parse(localStorage.getItem("listUsers"))
-    console.log(users[0].isLoggedIn)
+    // console.log(users[0].isLoggedIn)
   })
 
   const handleCloseReg = () => {
@@ -25,21 +32,24 @@ function NavBar({ bgNav, isLoggedIn, setIsLoggedIn }) {
 
   const handleOpenReg = () => {
     setShowreg(true)
+    setShowLog(false)
   }
 
   const [showLog, setShowLog] = useState(false)
 
   const handleCloseLog = () => {
     setShowLog(false)
-    setIsLoggedIn(true)
   }
 
   const handleOpenLog = () => {
     setShowLog(true)
   }
 
+  // console.log(loggedIn)
+
   return (
     <>
+      <div style={{ display: "none" }}>{}</div>
       <ModalRegister
         show={showreg}
         handleOpenLog={handleOpenLog}
@@ -48,8 +58,8 @@ function NavBar({ bgNav, isLoggedIn, setIsLoggedIn }) {
       <ModalLogin
         show={showLog}
         handleClose={handleCloseLog}
-        isLoggedIn={isLoggedIn}
-        setIsLoggedIn={setIsLoggedIn}
+        // isLoggedIn={loggedIn}
+        redirect={handleOpenReg}
       />
       <Navbar
         style={{
@@ -76,11 +86,8 @@ function NavBar({ bgNav, isLoggedIn, setIsLoggedIn }) {
             style={{ alignSelf: "end" }}
             className="d-flex align-item-center mb-3"
           >
-            {isLoggedIn ? (
-              <ProfileThumb
-                isLoggedIn={isLoggedIn}
-                setIsLoggedIn={setIsLoggedIn}
-              />
+            {loggedIn ? (
+              <ProfileThumb isLoggedIn={loggedIn} setTrigger={setTrigger} />
             ) : (
               <>
                 <Button

@@ -1,10 +1,21 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Image, Dropdown } from "react-bootstrap"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
-export default function ProfileThumb({ isLoggedIn, setIsLoggedIn }) {
+export default function ProfileThumb({ setTrigger }) {
+  const [LoggedIn, setIsLoggedIn] = useState(false)
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    setIsLoggedIn(localStorage.getItem("isLoggedIn"))
+  })
+
   const handleLOgOut = () => {
-    setIsLoggedIn(false)
+    // setIsLoggedIn(false)
+    JSON.stringify(localStorage.setItem("isLoggedIn", false))
+    setTrigger(true)
+    navigate("/")
   }
   return (
     <Dropdown>

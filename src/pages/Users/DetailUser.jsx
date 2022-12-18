@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Base } from "../../components/Base"
 import NavBar from "../../components/NavBar"
 import Footer from "../../components/Footer"
@@ -6,7 +6,19 @@ import { Container, Row, Image, Col, Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import HistoryOrder from "../../components/HistoryOrder"
 
-export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
+import { useParams } from "react-router-dom"
+
+export default function DetailUser({ isLoggedIn, setIsLoggedIn }) {
+  const [user, setUser] = useState({})
+
+  let { id } = useParams()
+
+  useEffect(() => {
+    const fetched = JSON.parse(localStorage.getItem("listUsers"))
+    setUser(fetched)
+    console.log(user[id])
+  }, [])
+
   return (
     <Base>
       <NavBar

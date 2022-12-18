@@ -121,6 +121,7 @@ export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
                           height={"25px"}
                           width={"25px"}
                           className="mt-3 me-2"
+                          style={{ margin: "auto" }}
                         />
                         {key.accomodation}
                       </h3>
@@ -147,10 +148,11 @@ export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
                         }}
                       >
                         <Image
-                          src="/iconHome.png"
+                          src="/plane.svg"
                           height={"25px"}
                           width={"25px"}
                           className="mt-3 me-2"
+                          style={{ margin: "auto" }}
                         />
                         {key.accomodation}
                       </h3>
@@ -178,10 +180,11 @@ export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
                         }}
                       >
                         <Image
-                          src="/iconHome.png"
+                          src="/meal.png"
                           height={"25px"}
                           width={"25px"}
                           className="mt-3 me-2"
+                          style={{ margin: "auto" }}
                         />
                         {key.eat}
                       </h3>
@@ -209,9 +212,10 @@ export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
                         }}
                       >
                         <Image
-                          src="/iconHome.png"
+                          src="/calendar.png"
                           height={"25px"}
                           width={"25px"}
+                          style={{ margin: "auto" }}
                           className="mt-3 me-2"
                         />
                         {key.duration}
@@ -240,10 +244,11 @@ export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
                         }}
                       >
                         <Image
-                          src="/iconHome.png"
+                          src="/time.png"
                           height={"25px"}
                           width={"25px"}
                           className="mt-3 me-2"
+                          style={{ margin: "auto" }}
                         />
                         {key.date_trip}
                       </h3>
@@ -280,7 +285,7 @@ export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
                     }}
                   >
                     <div className="d-flex align-item-baseline justify-content-baseline ">
-                      <div onClick={handleReducer}>
+                      <div onClick={handleReducer} style={{ margin: "auto" }}>
                         <img
                           src="/Minus.png"
                           alt=""
@@ -292,7 +297,7 @@ export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
                         <h1 className="text-primary">{counter}</h1>
                       </div>
 
-                      <div onClick={handleAdder}>
+                      <div onClick={handleAdder} style={{ margin: "auto" }}>
                         <img
                           src="/Plus.png"
                           alt=""

@@ -8,3 +8,7 @@
   background: none;
   border: none;
 }
+
+/* *:hover {
+  all: unset !important;
+} */

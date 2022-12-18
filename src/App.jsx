@@ -35,16 +35,21 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/detail-tour/:id" element={<DetailTour />} />
+
+          {/* Private Login Route User */}
           <Route element={<PrivateLogin isLoggedIn={isLogIn} />}>
-            <Route exact path="/IncomingTrips" element={<IncomingTrips />} />
-            <Route path="/detail-user" element={<DetailUser />} />
+            <Route path="/IncomingTrips" element={<IncomingTrips />} />
+            <Route path="/detail-user/:id" element={<DetailUser />} />
             <Route path="/payment" element={<Payment />} />
-            <Route path="/trips-history" element={<IncomingTrips />} />
             <Route path="/detail-tour" element={<DetailTour />} />
-            <Route path="/detail-user" element={<DetailUser />} />
             <Route path="/payment" element={<Payment />} />
           </Route>
-          <Route element={<PrivateLoginAdmin />}>
+          {/* Private Login Admin */}
+          <Route
+            element={
+              <PrivateLoginAdmin isLoggedIn={isLogIn} isAdmin={isAdmin} />
+            }
+          >
             <Route exact path="/IncomingTrips" element={<IncomingTrips />} />
           </Route>
         </Routes>
