@@ -5,6 +5,7 @@ import Footer from "../../components/Footer"
 import { Container, Row, Button } from "react-bootstrap"
 import HistoryOrder from "../../components/HistoryOrder"
 import ModalConfirmation from "../../components/ModalConfirmation"
+import { Navigate } from "react-router-dom"
 
 export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
   const props = {}
@@ -35,7 +36,7 @@ export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
             <HistoryOrder />
             <Row className="d-flex justify-content-end">
               <Button
-                onClick={handleShow}
+                onClick={Navigate({ to: "/pendingApproval" })}
                 className="text-white align-self-end col-4 "
                 style={{
                   height: "4rem",

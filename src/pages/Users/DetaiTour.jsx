@@ -73,19 +73,19 @@ export default function DetailTour({ isLoggedIn, setIsLoggedIn }) {
                   style={{ objectFit: "cover" }}
                 />
                 <Image
-                  src="/detailBig.png"
+                  src="/img_tours/dum1.jpg"
                   className="col-4"
                   rounded
                   height={"230px"}
                 />
                 <Image
-                  src="/detailBig.png"
+                  src="/img_tours/dum2.jpg"
                   className="col-4"
                   rounded
                   height={"230px"}
                 />
                 <Image
-                  src="/detailBig.png"
+                  src="/img_tours/dum3.jpg"
                   className="col-4"
                   rounded
                   height={"230px"}

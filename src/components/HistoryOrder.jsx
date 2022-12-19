@@ -70,12 +70,13 @@ export default function HistoryOrder() {
           >
             <img
               alt=""
-              src="/qr-code.svg"
+              src="/proof.jpg"
               width="190"
-              height="68"
+              height="200"
               className="d-inline-block align-top "
+              style={{ border: "1px solid grey" }}
             />
-            <h5 style={{ marginLeft: "4rem", marginTop: "2rem" }}>TCK0101</h5>
+            <h5 style={{ marginLeft: "4rem", marginTop: "2rem" }}>proof.jpg</h5>
           </Col>
         </Row>
         <Row>

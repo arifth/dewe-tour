@@ -1,19 +1,55 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { Modal, Button, Form } from "react-bootstrap"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export default function ModalRegister({ show, handleClose }) {
+  const navigate = useNavigate()
+  const [user, addUser] = useState({
+    id: 0,
+    isLoggedIn: false,
+    full_name: "",
+    email: "",
+    password: 0,
+    phone: 0,
+    address: "",
+    image: "",
+    role: ""
+  })
+  const [users, addUsers] = useState({
+    id: 0,
+    isLoggedIn: false,
+    full_name: "",
+    email: "",
+    password: 0,
+    phone: 0,
+    address: "",
+    image: "",
+    role: ""
+  })
   useEffect(() => {
     const tours = JSON.parse(localStorage.getItem("listTours"))
   })
 
   useEffect(() => {
-    const users = JSON.parse(localStorage.getItem("listUsers"))
-    // console.log(users[0].isLoggedIn)
+    addUsers(JSON.parse(localStorage.getItem("listUsers")))
   })
 
   // TODO[]: logic for register handling ,get all input from user then put it in ListUsers localstorage
-  const handleRegister = () => {}
+  const handleRegister = (e) => {
+    e.preventDefault()
+    const result = [...users, user]
+    localStorage.removeItem("listUsers")
+    localStorage.setItem("listUsers", JSON.stringify(result))
+    navigate("/")
+    console.log(result)
+    alert("registrasi sukses mazzeh")
+    handleClose()
+  }
+
+  const handleChange = (e) => {
+    const value = e.target.value
+    addUser({ ...user, [e.target.name]: value })
+  }
 
   return (
     <Modal show={show} onHide={handleClose} centered>
@@ -50,6 +86,8 @@ export default function ModalRegister({ show, handleClose }) {
               Full Name
             </Form.Label>
             <Form.Control
+              onChange={handleChange}
+              name={"full_name"}
               type="text"
               style={{
                 background: "#D2D2D2",
@@ -61,6 +99,8 @@ export default function ModalRegister({ show, handleClose }) {
               Email
             </Form.Label>
             <Form.Control
+              onChange={handleChange}
+              name={"email"}
               type="email"
               placeholder="name@example.com"
               style={{
@@ -73,6 +113,8 @@ export default function ModalRegister({ show, handleClose }) {
               Password
             </Form.Label>
             <Form.Control
+              onChange={handleChange}
+              name={"password"}
               type="password"
               style={{
                 background: "#D2D2D2",
@@ -84,7 +126,9 @@ export default function ModalRegister({ show, handleClose }) {
               Phone
             </Form.Label>
             <Form.Control
-              type="email"
+              onChange={handleChange}
+              name={"phone"}
+              type="number"
               style={{
                 background: "#D2D2D2",
                 marginBottom: "1rem",
@@ -100,6 +144,8 @@ export default function ModalRegister({ show, handleClose }) {
                 Address
               </Form.Label>
               <Form.Control
+                onChange={handleChange}
+                name={"address"}
                 as="textarea"
                 rows={3}
                 style={{

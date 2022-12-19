@@ -66,6 +66,7 @@ export default function ModalLogin({
         // workaround to trigger rerender
         handleTrigger()
         handleClose()
+        alert("you are logging in")
         // navigate(`/detail-user/${k.id}`)
         navigate("/")
       }

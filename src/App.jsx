@@ -14,6 +14,7 @@ import { isAdmin } from "./data/isAdmin"
 import { idUser } from "./data/idUser"
 import AddTrip from "./pages/Admin/AddTrip"
 import IncomeTrip from "./pages/Admin/IncomeTrip"
+import PaymentWaitingApproval from "./components/PaymentWaitingApproval"
 
 //  TODO[]: create Mockup for Add Trip and List Trip ( admin )
 //  TODO[]: create dummy data for payment history in localstorage
@@ -57,6 +58,10 @@ export default function App() {
             <Route path="/detail-user/:id" element={<DetailUser />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/detail-tour" element={<DetailTour />} />
+            <Route
+              path="/pendingApproval"
+              element={<PaymentWaitingApproval />}
+            />
           </Route>
           {/* Private Login Admin */}
           <Route

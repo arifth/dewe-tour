@@ -68,7 +68,7 @@ export default function IncomingTrips({ isLoggedIn, setIsLoggedIn }) {
                   <td>usman maun</td>
                   <td>@mdo</td>
                   <td>test</td>
-                  <td style={{ color: "green" }}>succses</td>
+                  <td style={{ color: "red" }}>rejected</td>
                   <td>
                     <Button
                       onClick={handleShow}
@@ -116,7 +116,7 @@ export default function IncomingTrips({ isLoggedIn, setIsLoggedIn }) {
                   <td>bbae rmasdf</td>
                   <td>@mdo</td>
                   <td>test</td>
-                  <td style={{ color: "green" }}>succses</td>
+                  <td style={{ color: "orange" }}>pending</td>
                   <td>
                     <Button
                       onClick={handleShow}
