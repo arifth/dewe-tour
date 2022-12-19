@@ -3,14 +3,14 @@ import React from "react"
 export default function TransStatus() {
   return (
     <div
-      className="col-2 ps-2 "
+      className="col-4 ps-2 "
       style={{
-        background: "rgba(60,247,30,0.1)",
-        color: "rgba(60,247,30,1)",
+        background: "rgba(236, 122, 122, 0.3)",
+        color: "#F7941E",
         padding: "1rem"
       }}
     >
-      <h5 style={{ margin: "auto" }}>Succes</h5>
+      <h5 style={{ margin: "auto", width: "150px" }}>Waiting Payment</h5>
     </div>
   )
 }

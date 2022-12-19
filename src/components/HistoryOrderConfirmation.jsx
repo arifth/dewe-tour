@@ -1,5 +1,5 @@
 import React from "react"
-import { Row, Col, Table } from "react-bootstrap"
+import { Row, Col, Table, Button } from "react-bootstrap"
 import TransStatus from "./TransStatus"
 import { Link } from "react-router-dom"
 
@@ -104,8 +104,28 @@ export default function HistoryOrderConfirmation() {
                 <td></td>
                 <th style={{ fontSize: "1.5rem" }}>
                   Total:{" "}
-                  <span style={{ color: "#FF0000" }}>IDR. 12,398,000</span>
+                  <span style={{ color: "#FF0000" }}>IDR. 15,398,000</span>
                 </th>
+                <Button
+                  style={{
+                    marginLeft: "10px",
+                    marginRight: "10px",
+                    background: "rgba(255, 7, 66, 1)",
+                    color: "white",
+                    border: "none"
+                  }}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  style={{
+                    background: "rgba(10, 207, 131, 1)",
+                    color: "white",
+                    border: "none"
+                  }}
+                >
+                  Approve
+                </Button>
               </tr>
             </tbody>
           </Table>

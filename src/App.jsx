@@ -49,18 +49,14 @@ export default function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/incomeTrip" element={<IncomeTrip />} />
-          <Route path="/addTrip" element={<AddTrip />} />
           <Route path="/" element={<Home />} />
           <Route path="/detail-tour/:id" element={<DetailTour />} />
 
           {/* Private Login Route User */}
           <Route element={<PrivateLogin isLoggedIn={isLogIn} />}>
-            <Route path="/IncomingTrips" element={<IncomingTrips />} />
             <Route path="/detail-user/:id" element={<DetailUser />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/detail-tour" element={<DetailTour />} />
-            <Route path="/payment" element={<Payment />} />
           </Route>
           {/* Private Login Admin */}
           <Route
@@ -68,6 +64,8 @@ export default function App() {
               <PrivateLoginAdmin isLoggedIn={isLogIn} isAdmin={isAdmin} />
             }
           >
+            <Route path="/incomeTrip" element={<IncomeTrip />} />
+            <Route path="/addTrip" element={<AddTrip />} />
             <Route exact path="/IncomingTrips" element={<IncomingTrips />} />
           </Route>
         </Routes>
